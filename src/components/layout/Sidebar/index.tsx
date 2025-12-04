@@ -6,11 +6,11 @@ import ComponentsPart from "./ComponentsPart";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="shadow-sm h-auto scroll-auto w-[300px] flex flex-col items-center ">
+    <div className={`bg-white px-[8px] h-screen overflow-y-auto scroll-auto w-[300px] flex flex-col items-center `}>
       <div className="py-[30px] flex justify-center w-[300px]">
         <img className="w-[100px]" src={LogoDark} alt="" />
       </div>
-      <div className="flex bg-light-gray w-full rounded-[4px] py-[20px] px-[30px] items-center gap-[10px]">
+      <div className="flex bg-light-gray w-full rounded-[4px] py-[20px]  px-[30px] items-center gap-[10px]">
         <div>
           <img className="w-[50px] rounded-[2px]" src={avatar} alt="" />
         </div>

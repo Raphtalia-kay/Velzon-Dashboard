@@ -2,7 +2,7 @@ import { useState } from "react";
 import {  pages, type PageItem } from "./data";
 
 const PagePart: React.FC = () => {
-  const [openID, setOpenID] = useState<number | null>(1);
+  const [openID, setOpenID] = useState<number | null>(0);
 
   return (
     <div className="flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">

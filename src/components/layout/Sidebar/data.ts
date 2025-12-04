@@ -1,5 +1,5 @@
 import { LayoutDashboard,CircleGauge, type LucideProps } from "lucide-react";
-import { ChevronDown, Smartphone , LayoutPanelLeft } from "lucide-react";
+import { ChevronDown , Rocket , NotebookText , BookUser, Smartphone , LayoutPanelLeft } from "lucide-react";
 export type MenuItem = {
   id: number;
   name: string;
@@ -11,8 +11,8 @@ export type MenuItem = {
     Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
   >;
   subItems?: SubItem[];
-};
-export type SubItem = {
+   badge?: string | React.ReactNode;
+}; export type SubItem = {
   id: number;
   label: string;
   href: string;
@@ -60,7 +60,7 @@ export const menus: MenuItem[] = [
       { id: 8, label: "Blog",  href : "",  badge: "New" }
     ],
     href: "",
-    arrow: ChevronDown,
+    arrow: ChevronDown
   },
    {
     id: 2,
@@ -78,6 +78,7 @@ export const menus: MenuItem[] = [
     ],
     href: "",
     arrow: ChevronDown,
+    badge : "New"
   },
   {
     id: 3,
@@ -94,13 +95,13 @@ export const menus: MenuItem[] = [
       { id: 8, label: "Blog",  href : "",  badge: "New" }
     ],
     href: "",
-    arrow: ChevronDown,
+    arrow: ChevronDown
   },
 ];
 export const pages: PageItem[] = [
   {
     id: 1,
-    icon: LayoutDashboard,
+    icon: BookUser,
     name: "Authentication",
     subItems : [
       {id : 1 , label : "Sign in", href : ""},
@@ -118,7 +119,7 @@ export const pages: PageItem[] = [
   },
    {
     id: 2,
-    icon: Smartphone ,
+    icon: NotebookText ,
     name: "Pages",
     subItems : [
       {id : 1 , label : "Sign in", href : ""},
@@ -136,7 +137,7 @@ export const pages: PageItem[] = [
   },
   {
     id: 3,
-    icon: LayoutPanelLeft,
+    icon: Rocket,
     name: "Landing",
     subItems : [
       {id : 1 , label : "Sign in", href : ""},

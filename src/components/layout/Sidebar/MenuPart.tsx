@@ -2,7 +2,7 @@ import { useState } from "react";
 import { menus, type MenuItem } from "./data";
 
 const MenuPart: React.FC = () => {
-  const [openID, setOpenID] = useState<number | null>(1);
+  const [openID, setOpenID] = useState<number | null>(0);
 
   return (
     <div className="flex flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
@@ -24,6 +24,13 @@ const MenuPart: React.FC = () => {
                 <item.arrow
                   className={`transition-transform w-[16px] ${openID === item.id ? "rotate-180" : ""}`}
                 />
+                {/* {
+                  item.badge && (
+                    <span className="text-[14px] bg-red-500 rounded-[4px] text-white px-[10px] py-[2px] tracking-wider leading-relaxed font-medium">
+                      {item.badge}
+                    </span>
+                  )
+                } */}
               </button>
               {openID === item.id && item.subItems && (
                 <div className="">
