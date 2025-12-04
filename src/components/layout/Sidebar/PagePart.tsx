@@ -5,17 +5,17 @@ const PagePart: React.FC = () => {
   const [openID, setOpenID] = useState<number | null>(1);
 
   return (
-    <div className="flex flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
+    <div className="flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
       <div className="py-[4px]">
         <h3 className="text-[18px] tracking-normal leading-normal text-gray">
           Pages
         </h3>
         <div className="flex flex-col flex-wrap gap-[8px] w-full ">
-          {pages.map((item: MenuItem) => (
+          {pages.map((item: PageItem) => (
             <div className="" key={item.id}>
               <button
                 onClick={() => setOpenID(openID === item.id ? null : item.id)}
-                className={`flex  w-full flex-row justify-between gap-[10px] items-center py-[8px] ${openID === item.id ? "text-purple" : "text-black"}`}
+                className={`flex  w-full flex-row justify-between gap-[10px] hover:text-purple items-center py-[8px] ${openID === item.id ? "text-purple" : "text-black"}`}
               >
                 <div className="flex flex-row gap-[14px] items-center">
                   <item.icon className="w-[16px]" />
@@ -27,7 +27,7 @@ const PagePart: React.FC = () => {
               </button>
               {openID === item.id && item.subItems && (
                 <div className="">
-                  {item.subItems?.map((i: SubItem) => (
+                  {item.subItems?.map((i) => (
                     <div
                       key={i.id}
                       className="flex justify-between items-center w-full px-[10px] group  gap-[20px] py-[10px]  "

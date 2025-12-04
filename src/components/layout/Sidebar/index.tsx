@@ -2,10 +2,11 @@ import avatar from "../../../assets/common/avatar-1.jpg";
 import MenuPart from "./MenuPart";
 import { LogoDark } from "../../../assets/common";
 import PagePart from "./PagePart";
+import ComponentsPart from "./ComponentsPart";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="shadow-sm h-screen scroll-auto w-[300px] flex flex-col items-center ">
+    <div className="shadow-sm h-auto scroll-auto w-[300px] flex flex-col items-center ">
       <div className="py-[30px] flex justify-center w-[300px]">
         <img className="w-[100px]" src={LogoDark} alt="" />
       </div>
@@ -24,6 +25,10 @@ const Sidebar: React.FC = () => {
 
       <MenuPart />
       <PagePart/>
+      <ComponentsPart/>
+
+      
+
     </div>
   );
 };

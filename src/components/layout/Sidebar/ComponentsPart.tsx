@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { menus, type MenuItem } from "./data";
+import {  components,  type ComponentItem } from "./data";
 
-const MenuPart: React.FC = () => {
+const ComponentsPart: React.FC = () => {
   const [openID, setOpenID] = useState<number | null>(1);
 
   return (
-    <div className="flex flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
+    <div className="flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
       <div className="py-[4px]">
         <h3 className="text-[18px] tracking-normal leading-normal text-gray">
-          Menu
+          Pages
         </h3>
-        <div className="flex flex-col  flex-wrap gap-[8px] w-full ">
-          {menus.map((item: MenuItem) => (
+        <div className="flex flex-col flex-wrap gap-[8px] w-full ">
+          {components.map((item: ComponentItem) => (
             <div className="" key={item.id}>
               <button
                 onClick={() => setOpenID(openID === item.id ? null : item.id)}
@@ -58,4 +58,4 @@ const MenuPart: React.FC = () => {
   );
 };
 
-export default MenuPart;
+export default ComponentsPart;
