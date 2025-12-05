@@ -4,17 +4,28 @@ import {
   LayoutDashboard,
   Menu,
   Moon,
+  MoveRight,
   Scan,
   Search,
 } from "lucide-react";
 import { AmericanFlag } from "../../../assets/common";
 
-const Navbar = () => {
+interface NavbarProps {
+  collapsed: boolean;
+  onToggle: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ collapsed, onToggle }) => {
   return (
     <>
       <section className="bg-white w-full justify-between  flex px-[20px] gap-[10px] items-center h-[70px]">
         <div className="flex gap-[10px] items-center">
-          <Menu />
+          {collapsed ? (
+            <MoveRight onClick={onToggle} className="w-[25px] h-[25px] text-gray overflow-hidden" />
+          ) : (
+            <Menu onClick={onToggle} />
+          )}
+
           <div className="w-[250px] h-[40px]  rounded-[4px]  flex items-center gap-[8px] px-[10px]  bg-light-gray">
             <Search className="w-[20px] h-[20px] text-gray overflow-hidden" />
             <input

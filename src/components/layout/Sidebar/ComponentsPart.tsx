@@ -1,13 +1,16 @@
 import { useState } from "react";
 import {  components,  type ComponentItem } from "./data";
 
-const ComponentsPart: React.FC = () => {
+interface SidebarProps {
+  collapsed: boolean;
+}
+const ComponentsPart: React.FC<SidebarProps> = ({ collapsed }) => {
   const [openID, setOpenID] = useState<number | null>(0);
 
   return (
     <div className="flex flex-col  w-full rounded-[4px]  py-[20px] px-[30px]  gap-[10px]">
       <div className="py-[4px]">
-        <h3 className="text-[18px] tracking-normal leading-normal text-gray">
+        <h3 className={`text-[18px]  tracking-normal leading-normal text-gray ${collapsed ? "hidden" : ""} `}>
           Pages
         </h3>
         <div className="flex flex-col flex-wrap gap-[8px] w-full ">
@@ -19,10 +22,10 @@ const ComponentsPart: React.FC = () => {
               >
                 <div className="flex flex-row gap-[14px] items-center">
                   <item.icon className="w-[16px]" />
-                  <p>{item.name}</p>
+                   <p className={`tracking-wider leading-relaxed text-[18px] font-normal ${collapsed ? "hidden" : ""}`}>{item.name}</p>
                 </div>
                 <item.arrow
-                  className={`transition-transform w-[16px] ${openID === item.id ? "rotate-180" : ""}`}
+                  className={`transition-transform w-[16px]  ${collapsed ? "hidden" : ""} ${openID === item.id ? "rotate-180" : ""}`}
                 />
               </button>
               {openID === item.id && item.subItems && (
